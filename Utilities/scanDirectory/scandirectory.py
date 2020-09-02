@@ -32,6 +32,8 @@ class Scanner:
             files.extend(filenames)
             break
 
+        files = [os.path.join(inputPath, file) for file in files]
+
         return files
 
     @staticmethod
@@ -42,11 +44,16 @@ class Scanner:
         allFiles = []
         for file in filesList:
             fileDepth = len(file[0].split(fileSeparator))
-            if fileDepth - baseDepth > depth:
+            if (fileDepth - baseDepth > depth) or (fileDepth - baseDepth == 0):
                 continue
             allFiles.append(file)
 
-        return allFiles
+        baseFiles = []
+        for level in allFiles:
+            for file in level[2]:
+                file = os.path.join(level[0], file)
+                baseFiles.append(file)
+        return baseFiles
 
     def __fillExtensionsDict(self, targetAddresses):
         for file in targetAddresses:
@@ -89,19 +96,23 @@ class Scanner:
         else:
             self.outputPath = outputPath
 
-        if not self.__isValidDir(inputPath):
+        print(self.inputPath, inputPath, outputPath)
+        if not self.__isValidDir(self.inputPath):
             print("Input Directory invalid")
-        if not self.__isValidDir(outputPath):
+        if not self.__isValidDir(self.outputPath):
             print("Output Directory invalid")
 
         #  read input files
         rootFiles = self.__readRootFiles(self.inputPath)
+        # print(rootFiles)
 
         #  read target addresses
         targetAddresses = self.__readAddressRecursively(self.outputPath, self.depth)
+        # print(targetAddresses)
 
         #  form extensions dict from target address list
         self.__fillExtensionsDict(targetAddresses)
+        # print(self.extensionsDict[".json"].getMaxOccurringAddress)
 
         # move files to targets
         self.__moveFilesToTargetFolders(rootFiles)

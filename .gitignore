@@ -3,9 +3,11 @@
 *.db
 app.py
 app2.py
+app3.py
 appmove.py
 test.json
 Test/
+Test2/
 .idea/
 
 
