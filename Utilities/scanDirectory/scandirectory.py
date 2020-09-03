@@ -64,7 +64,7 @@ class Scanner:
     @staticmethod
     def __checkAndMove(sourceFile, destination):
         try:
-            dest = shutil.move(sourceFile, destination, copy_function=shutil.copytree)
+            _ = shutil.move(sourceFile, destination, copy_function=shutil.copytree)
         except shutil.Error as e:
             print("{}. File NOT moved.".format(str(e)))
 
