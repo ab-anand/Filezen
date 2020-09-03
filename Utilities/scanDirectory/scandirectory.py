@@ -15,7 +15,7 @@ class Scanner:
 
     @staticmethod
     def __isValidDir(path):
-        return os.path.isdir(path)
+        assert (os.path.isdir(path))
 
     @staticmethod
     def __getFileExtension(file):
@@ -91,16 +91,24 @@ class Scanner:
 
         self.inputPath = inputPath
         self.depth = depth
-        if outputPath is None:
+        if (self.outputPath is None) and (outputPath is None):
             self.outputPath = inputPath
         else:
             self.outputPath = outputPath
 
         print(self.inputPath, inputPath, outputPath)
-        if not self.__isValidDir(self.inputPath):
-            print("Input Directory invalid")
-        if not self.__isValidDir(self.outputPath):
-            print("Output Directory invalid")
+
+        try:
+            self.__isValidDir(self.inputPath)
+        except AssertionError:
+            print("Invalid input Path. Please verify and try again.")
+            return 0
+
+        try:
+            self.__isValidDir(self.outputPath)
+        except AssertionError:
+            print("Invalid output path. Please verify and try again.")
+            return 0
 
         #  read input files
         rootFiles = self.__readRootFiles(self.inputPath)
@@ -117,8 +125,12 @@ class Scanner:
         # move files to targets
         self.__moveFilesToTargetFolders(rootFiles)
 
+        return 1
+
     def setOutputPath(self, outputPath):
-        if self.__isValidDir(outputPath):
-            self.outputPath = outputPath
+        try:
+            self.__isValidDir(outputPath)
+        except AssertionError:
+            print("Invalid output path. Please verify and try again.")
         else:
-            pass
+            self.outputPath = outputPath
