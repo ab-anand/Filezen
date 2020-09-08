@@ -15,7 +15,11 @@ class Scanner:
 
     @staticmethod
     def __isValidDir(path):
-        assert (os.path.isdir(path))
+        return os.path.isdir(path)
+
+    @staticmethod
+    def __isValidDepth(depth):
+        return depth >= 0
 
     @staticmethod
     def __getFileExtension(file):
@@ -65,22 +69,34 @@ class Scanner:
     def __checkAndMove(sourceFile, destination):
         try:
             _ = shutil.move(sourceFile, destination, copy_function=shutil.copytree)
-        except shutil.Error as e:
-            print("{}. File NOT moved.".format(str(e)))
+            return 1
+        except shutil.Error:
+            return 0
+            # print("{}. File NOT moved.".format(str(e)))
 
     def __moveFilesToTargetFolders(self, rootFiles):
+        status = {"Moved": [], "NotMoved": []}
+        
         # iterate in rootFiles
         for file in rootFiles:
             fileExtension = self.__getFileExtension(file)
             destinationsList = self.extensionsDict[fileExtension].getValueList
+
             # check if the file ever occurred in the destination path
             if len(destinationsList) == 0:
                 destination = self.outputPath
             else:
                 destination = self.extensionsDict[fileExtension].getMaxOccurringAddress
 
-            print("Moving '{}' to '{}' folder.".format(os.path.basename(file), destination))
-            self.__checkAndMove(file, destination)
+            # print("Moving '{}' to '{}' folder.".format(os.path.basename(file), destination))
+            isMoved = self.__checkAndMove(file, destination)
+
+            if isMoved:
+                status["Moved"].append(os.path.basename(file))
+            else:
+                status["NotMoved"].append(os.path.basename(file))
+
+        return status
 
     def readDirectory(self, inputPath, depth=5, outputPath=None):
         """
@@ -89,26 +105,23 @@ class Scanner:
         :type inputPath: string
         """
 
+        errorInputPath = "The specified input directory doesn't exist."
+        errorOutputPath = "The specified output directory doesn't exist."
+        errorDepth = "Depth cannot be less than 0."
+
+        assert self.__isValidDir(inputPath), errorInputPath
+        assert self.__isValidDepth(depth), errorDepth
+        if outputPath is not None:
+            assert self.__isValidDir(outputPath), errorOutputPath
+
         self.inputPath = inputPath
         self.depth = depth
         if (self.outputPath is None) and (outputPath is None):
             self.outputPath = inputPath
-        else:
+        elif outputPath is not None:
             self.outputPath = outputPath
 
-        print(self.inputPath, inputPath, outputPath)
-
-        try:
-            self.__isValidDir(self.inputPath)
-        except AssertionError:
-            print("Invalid input Path. Please verify and try again.")
-            return 0
-
-        try:
-            self.__isValidDir(self.outputPath)
-        except AssertionError:
-            print("Invalid output path. Please verify and try again.")
-            return 0
+        # print(self.inputPath, inputPath, outputPath)
 
         #  read input files
         rootFiles = self.__readRootFiles(self.inputPath)
@@ -123,14 +136,15 @@ class Scanner:
         # print(self.extensionsDict[".json"].getMaxOccurringAddress)
 
         # move files to targets
-        self.__moveFilesToTargetFolders(rootFiles)
-
-        return 1
+        transferStatusDict = self.__moveFilesToTargetFolders(rootFiles)
+        return transferStatusDict
 
     def setOutputPath(self, outputPath):
-        try:
-            self.__isValidDir(outputPath)
-        except AssertionError:
-            print("Invalid output path. Please verify and try again.")
-        else:
-            self.outputPath = outputPath
+        error = "The specified output directory doesn't exist."
+        assert self.__isValidDir(outputPath), error
+        self.outputPath = outputPath
+
+    def setDepth(self, depth):
+        error = "Depth cannot be less than 0."
+        assert self.__isValidDepth(depth), error
+        self.depth = depth
