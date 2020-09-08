@@ -1,7 +1,6 @@
 #####=== Python ===#####
 
 *.db
-terminal.py
 app.py
 app2.py
 app3.py
