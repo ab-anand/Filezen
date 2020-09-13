@@ -2,7 +2,7 @@ import os
 import shutil
 
 from pathlib import Path
-from kreta.simpleScanner.extensionMapper import extensionsToFolder
+from ikreta.simpleScanner.extensionMapper import extensionsToFolder
 
 
 class SimpleScanner:

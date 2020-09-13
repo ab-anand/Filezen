@@ -1,0 +1,4 @@
+"""
+Imports class 'Kreta'
+"""
+
