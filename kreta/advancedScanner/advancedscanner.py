@@ -3,7 +3,7 @@ import shutil
 
 from pathlib import Path
 from collections import defaultdict
-from Utilities.frequencyHeap import frequencyheap
+from kreta.frequencyHeap import frequencyheap
 
 
 class AdvancedScanner:

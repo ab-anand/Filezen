@@ -1,6 +1,8 @@
 TODO
 
 * Terminal
-    * colours(clint), app-logo
+    * app-logo
     * Convert to executable
     * Setup Tools
+    * Create Package
+    * Complete terminal app

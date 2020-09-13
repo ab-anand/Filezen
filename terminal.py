@@ -8,7 +8,7 @@ import emoji
 
 from collections import OrderedDict
 from clint.textui import puts, colored
-from Utilities.advancedScanner import advancedscanner
+from kreta.advancedScanner import advancedscanner
 
 try:
     input = raw_input  # for python2 compatibility
