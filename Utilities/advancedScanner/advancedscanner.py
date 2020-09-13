@@ -6,7 +6,7 @@ from collections import defaultdict
 from Utilities.frequencyHeap import frequencyheap
 
 
-class Scanner:
+class AdvancedScanner:
     def __init__(self):
         self.inputPath = None
         self.depth = 5

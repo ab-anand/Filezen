@@ -8,7 +8,7 @@ import emoji
 
 from collections import OrderedDict
 from clint.textui import puts, colored
-from Utilities.scanDirectory import scandirectory
+from Utilities.advancedScanner import advancedscanner
 
 try:
     input = raw_input  # for python2 compatibility
@@ -95,7 +95,7 @@ def intelligentScanner():
         printAppBanner()
 
         try:
-            scanner = scandirectory.Scanner()
+            scanner = advancedscanner.AdvancedScanner()
             fileStatus = scanner.readDirectory(inputPath, outputPath=outputPath, depth=depth)
 
             printAppBanner()
