@@ -1,3 +1,3 @@
-## Teleporter
+## Kreta
 
 An intelligent file organizer
