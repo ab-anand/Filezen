@@ -1,13 +1,47 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+NOTE ON ADVANCEDSCANNER
+=====================
+
+* This program uses the FREQUENCYHEAP to
+maintain the most used folder location to store
+files of a particular type.
+
+* Using the heap built, it move the files to the
+corresponding directory.
+
+* If a file with the same name is already present in
+that mapping directory, then the file won't be moved.
+
+"""
+
+
 import os
 import shutil
+import json
 
 from pathlib import Path
 from collections import defaultdict
-from ikreta.frequencyHeap import frequencyheap
+from filezen.frequencyHeap import frequencyheap
 
 
 class AdvancedScanner:
+    """
+    This class maintains a dictionary with
+    key being the file type and value being a
+    FREQUENCYHEAP. It then move the files according
+    to this dictionary.
+    """
+
     def __init__(self):
+        """
+        initializes inputPath,
+        depth, outPath & extensionsDict
+        required for the class
+        """
+
         self.inputPath = None
         self.depth = 5
         self.outputPath = None
@@ -15,14 +49,39 @@ class AdvancedScanner:
 
     @staticmethod
     def __isValidDir(path):
+        """
+        checks whether the given path
+        exists in the directory or not
+
+        :type path: string
+        :param path: the path to check
+        :return: 1 if path exists, 0 if it doesn't
+        """
+
         return os.path.isdir(path)
 
     @staticmethod
     def __isValidDepth(depth):
+        """
+         checks whether the given depth
+         is valid or not for our use case
+
+         :type depth: int
+         :param depth: the depth to check
+         :return: 1 if depth >= 0, 0 otherwise
+         """
         return depth >= 0
 
     @staticmethod
     def __getFileExtension(file):
+        """
+        finds the file extension
+
+        :type file: string
+        :param file: the file whose extension is needed
+        :return: extension of the file
+        """
+
         extension = Path(file).suffix
         if extension == '':
             extension = os.path.basename(file)
@@ -31,6 +90,15 @@ class AdvancedScanner:
 
     @staticmethod
     def __readRootFiles(inputPath):
+        """
+        read files present in the inputPath
+        which are needed to be organized/moved
+
+        :type inputPath: string
+        :param inputPath: the input folder where the cluttered files reside
+        :return: list of files present in inputPath
+        """
+
         files = []
         for (_, _, filenames) in os.walk(inputPath):
             files.extend(filenames)
@@ -137,14 +205,28 @@ class AdvancedScanner:
 
         # move files to targets
         transferStatusDict = self.__moveFilesToTargetFolders(rootFiles)
-        return transferStatusDict
+        return json.dumps(transferStatusDict, indent=4)
 
     def setOutputPath(self, outputPath):
+        """
+        set the depth of scanning
+
+        :type outputPath: string
+        :param outputPath: the output folder where the files needs to be moved
+        """
+
         error = "The specified output directory doesn't exist."
         assert self.__isValidDir(outputPath), error
         self.outputPath = outputPath
 
     def setDepth(self, depth):
+        """
+        set the depth of scanning
+
+        :type depth: int
+        :param depth: the depth up to which scanning would be done
+        """
+
         error = "Depth cannot be less than 0."
         assert self.__isValidDepth(depth), error
         self.depth = depth

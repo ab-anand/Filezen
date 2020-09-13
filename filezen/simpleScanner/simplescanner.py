@@ -1,11 +1,37 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+NOTE ON SIMPLESCANNER
+=====================
+
+* This program uses a predefined mapping
+to store a particular file type from the
+input directory.
+
+* Validates the folder location and moves a file
+according to the mapping.
+
+* If a file with the same name is already present in
+that mapping directory, then the file won't be moved.
+
+"""
+
+
 import os
 import shutil
+import json
 
 from pathlib import Path
-from ikreta.simpleScanner.extensionMapper import extensionsToFolder
+from filezen.simpleScanner.extensionMapper import extensionsToFolder
 
 
 class SimpleScanner:
+    """
+    This class moves the input files
+    using a predefined mapping.
+    """
+
     def __init__(self):
         self.extensionsToFolder = extensionsToFolder
         self.inputPath = None
@@ -92,7 +118,7 @@ class SimpleScanner:
 
         # move files to targets
         transferStatusDict = self.__moveFilesToTargetFolders(rootFiles)
-        return transferStatusDict
+        return json.dumps(transferStatusDict, indent=4)
 
     def setOutputPath(self, outputPath):
         error = "The specified output directory doesn't exist."

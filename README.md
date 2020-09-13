@@ -1,3 +1,3 @@
-## IKreta
+## FileZen
 
 An intelligent file organizer
