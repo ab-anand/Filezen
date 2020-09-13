@@ -9,6 +9,7 @@ import emoji
 from collections import OrderedDict
 from clint.textui import puts, colored
 from kreta.advancedScanner import advancedscanner
+from kreta.simpleScanner import simplescanner
 
 try:
     input = raw_input  # for python2 compatibility
@@ -57,8 +58,47 @@ def appMenu(invalidChoice=False):
 
 
 def basicScanner():
-    """performs a plain scanning"""
-    pass
+    """performs a basic scanning"""
+    printAppBanner()
+    try:
+        puts(colored.magenta("\nEnter input path"))
+        inputPath = None
+        while inputPath is None or inputPath is "":
+            inputPath = input("Input Path: ")
+            inputPath = inputPath.strip()
+
+        outputPath = None
+        puts(colored.magenta("\n[optional] Do you want to set output path?"))
+        choiceForOutputPath = input("Set output path (y/n): ")
+        choiceForOutputPath = choiceForOutputPath.lower().strip()
+        if choiceForOutputPath == 'y':
+            outputPath = input("Output Path: ")
+            if outputPath is not "":
+                outputPath = outputPath.strip()
+
+        printAppBanner()
+
+        try:
+            scanner = simplescanner.SimpleScanner()
+            fileStatus = scanner.readDirectory(inputPath, outputPath=outputPath)
+
+            printAppBanner()
+
+            puts(colored.green("\nFiles moved: {}".format(len(fileStatus["Moved"]))))
+            for file in fileStatus["Moved"]:
+                print("{}  {}".format(emoji.emojize(":check_mark:"), file))
+
+            puts(colored.red("\nFiles not moved: {}".format(len(fileStatus["NotMoved"]))))
+            for file in fileStatus["NotMoved"]:
+                print("{} {}".format(emoji.emojize(":cross_mark:"), file))
+            print()
+
+        except AssertionError as e:
+            errorString = "ERROR: {}\n".format(str(e))
+            puts(colored.red(errorString))
+    except Exception as e:
+        errorString = "ERROR: {}\n".format(str(e))
+        puts(colored.red(errorString))
 
 
 def intelligentScanner():
@@ -110,9 +150,11 @@ def intelligentScanner():
             print()
 
         except AssertionError as e:
-            puts(colored.red(e))
+            errorString = "ERROR: {}\n".format(str(e))
+            puts(colored.red(errorString))
     except Exception as e:
-        puts(colored.red(e))
+        errorString = "ERROR: {}\n".format(str(e))
+        puts(colored.red(errorString))
 
 
 menu = OrderedDict([
