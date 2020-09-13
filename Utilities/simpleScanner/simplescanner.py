@@ -48,18 +48,22 @@ class SimpleScanner:
         # iterate in rootFiles
         for file in rootFiles:
             fileExtension = self.__getFileExtension(file)
+
             if fileExtension in extensionsToFolder:
                 folderType = extensionsToFolder[fileExtension]
-                completeFolderPath = os.path.join(self.outputPath, folderType)
+            else:
+                folderType = extensionsToFolder["default"]
 
-                if not os.path.exists(completeFolderPath):
-                    os.makedirs(completeFolderPath)
+            completeFolderPath = os.path.join(self.outputPath, folderType)
 
-                isMoved = self.__checkAndMove(file, completeFolderPath)
-                if isMoved:
-                    status["Moved"].append(os.path.basename(file))
-                else:
-                    status["NotMoved"].append(os.path.basename(file))
+            if not os.path.exists(completeFolderPath):
+                os.makedirs(completeFolderPath)
+
+            isMoved = self.__checkAndMove(file, completeFolderPath)
+            if isMoved:
+                status["Moved"].append(os.path.basename(file))
+            else:
+                status["NotMoved"].append(os.path.basename(file))
 
         return status
 
