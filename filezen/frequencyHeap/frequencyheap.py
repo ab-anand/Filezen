@@ -3,34 +3,27 @@
 
 """
 NOTE ON FREQUENCYHEAP
-=====================
-
+===================== \
 * This program will maintain a heap of file
-locations according to their occurrences.
-
+locations according to their occurrences. \
 * It helps to get the folder location where a
-file of a particular type is stored.
-
+file of a particular type is stored. \
 """
 
 from collections import Counter
 
 
 class MaxFrequency:
-    """
-    Defined class builds a heap
+    """Defined class builds a heap
     of elements according to their occurrence
     """
 
     def __init__(self):
-        """
-        initializes the heap of file locations
-        """
+        """initializes the heap of file locations"""
         self.folderAddresses = []
 
     def appendAddress(self, path):
-        """
-        adds new addresses to the heap
+        """adds new addresses to the heap
 
         :type path: string
         :param path: the file path to add to the heap
@@ -40,8 +33,7 @@ class MaxFrequency:
 
     @property
     def getMaxOccurringAddress(self):
-        """
-        returns the most occurring folder location in the heap
+        """returns the most occurring folder location in the heap
 
         :return: most frequent folder location: string
         """
@@ -51,8 +43,7 @@ class MaxFrequency:
 
     @property
     def getValueList(self):
-        """
-        returns the  complete heap
+        """returns the complete heap
 
         :return: the heap of folder locations
         """
