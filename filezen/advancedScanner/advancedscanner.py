@@ -19,20 +19,20 @@ that mapping directory, then the file won't be moved.
 
 
 import os
-import shutil
 import json
 
-from pathlib import Path
 from collections import defaultdict
 from filezen.frequencyHeap import frequencyheap
+from filezen.scanner import scanner
 
 
-class AdvancedScanner:
+class AdvancedScanner(scanner.Scanner):
     """
     This class maintains a dictionary with
     key being the file type and value being a
     FREQUENCYHEAP. It then move the files according
-    to this dictionary.
+    to this dictionary. Inherits
+    some methods from Scanner.
     """
 
     def __init__(self):
@@ -48,19 +48,6 @@ class AdvancedScanner:
         self.extensionsDict = defaultdict(frequencyheap.MaxFrequency)
 
     @staticmethod
-    def __isValidDir(path):
-        """
-        checks whether the given path
-        exists in the directory or not
-
-        :type path: string
-        :param path: the path to check
-        :return: 1 if path exists, 0 if it doesn't
-        """
-
-        return os.path.isdir(path)
-
-    @staticmethod
     def __isValidDepth(depth):
         """
          checks whether the given depth
@@ -73,43 +60,18 @@ class AdvancedScanner:
         return depth >= 0
 
     @staticmethod
-    def __getFileExtension(file):
-        """
-        finds the file extension
-
-        :type file: string
-        :param file: the file whose extension is needed
-        :return: extension of the file
-        """
-
-        extension = Path(file).suffix
-        if extension == '':
-            extension = os.path.basename(file)
-
-        return extension
-
-    @staticmethod
-    def __readRootFiles(inputPath):
-        """
-        read files present in the inputPath
-        which are needed to be organized/moved
-
-        :type inputPath: string
-        :param inputPath: the input folder where the cluttered files reside
-        :return: list of files present in inputPath
-        """
-
-        files = []
-        for (_, _, filenames) in os.walk(inputPath):
-            files.extend(filenames)
-            break
-
-        files = [os.path.join(inputPath, file) for file in files]
-
-        return files
-
-    @staticmethod
     def __readAddressRecursively(outputPath, depth):
+        """
+        scans the output folder's file
+        storage pattern
+
+        :type outputPath: string
+        :param outputPath: the folder to scan
+        :type depth: int
+        :param depth: levels of folders to scan
+        :return: list of absolute path of files in the output folder
+        """
+
         fileSeparator = os.sep
         baseDepth = len(outputPath.split(fileSeparator))
         filesList = [(root, dirs, files) for root, dirs, files, in os.walk(outputPath)]
@@ -128,26 +90,37 @@ class AdvancedScanner:
         return baseFiles
 
     def __fillExtensionsDict(self, targetAddresses):
+        """
+        using the targetAddresses, it fills
+        the location heap for types of files present
+
+        :type targetAddresses: list
+        :param targetAddresses: the list of files in the output folder
+        """
+
         for file in targetAddresses:
-            fileExtension = self.__getFileExtension(file)
+            fileExtension = self.getFileExtension(file)
             fileAddress = os.path.dirname(file)
             self.extensionsDict[fileExtension].appendAddress(fileAddress)
 
-    @staticmethod
-    def __checkAndMove(sourceFile, destination):
-        try:
-            _ = shutil.move(sourceFile, destination, copy_function=shutil.copytree)
-            return 1
-        except shutil.Error:
-            return 0
-            # print("{}. File NOT moved.".format(str(e)))
-
     def __moveFilesToTargetFolders(self, rootFiles):
+        """
+        iteratively goes through each file
+        in the input directory and using the
+        extensionsDict it finds the location
+        for a file type then using checkAndMove
+        function it moves the files
+
+        :type rootFiles: list
+        :param rootFiles: list of files in the input folder
+        :return: a dictionary with list of files that were moved/not-moved
+        """
+
         status = {"Moved": [], "NotMoved": []}
         
         # iterate in rootFiles
         for file in rootFiles:
-            fileExtension = self.__getFileExtension(file)
+            fileExtension = self.getFileExtension(file)
             destinationsList = self.extensionsDict[fileExtension].getValueList
 
             # check if the file ever occurred in the destination path
@@ -157,7 +130,7 @@ class AdvancedScanner:
                 destination = self.extensionsDict[fileExtension].getMaxOccurringAddress
 
             # print("Moving '{}' to '{}' folder.".format(os.path.basename(file), destination))
-            isMoved = self.__checkAndMove(file, destination)
+            isMoved = self.checkAndMove(file, destination)
 
             if isMoved:
                 status["Moved"].append(os.path.basename(file))
@@ -168,19 +141,28 @@ class AdvancedScanner:
 
     def readDirectory(self, inputPath, depth=5, outputPath=None):
         """
+        The main functions which takes inputPath,
+        outputPath, depth and validates them. Then
+        calling the required functions in order to move
+        the files to their respective locations
+
         :type outputPath: string
+        :param outputPath: absolute path of the folder containing output files
         :type depth: integer
+        :param depth: levels of folders to scan
+        :param inputPath: absolute path of the folder containing input files
         :type inputPath: string
+        :return: json containing list of file that were moved/not-moved
         """
 
         errorInputPath = "The specified input directory doesn't exist."
         errorOutputPath = "The specified output directory doesn't exist."
         errorDepth = "Depth cannot be less than 0."
 
-        assert self.__isValidDir(inputPath), errorInputPath
+        assert self.isValidDir(inputPath), errorInputPath
         assert self.__isValidDepth(depth), errorDepth
         if outputPath is not None:
-            assert self.__isValidDir(outputPath), errorOutputPath
+            assert self.isValidDir(outputPath), errorOutputPath
 
         self.inputPath = inputPath
         self.depth = depth
@@ -192,31 +174,29 @@ class AdvancedScanner:
         # print(self.inputPath, inputPath, outputPath)
 
         #  read input files
-        rootFiles = self.__readRootFiles(self.inputPath)
-        # print(rootFiles)
+        rootFiles = self.readRootFiles(self.inputPath)
 
         #  read target addresses
         targetAddresses = self.__readAddressRecursively(self.outputPath, self.depth)
-        # print(targetAddresses)
 
         #  form extensions dict from target address list
         self.__fillExtensionsDict(targetAddresses)
-        # print(self.extensionsDict[".json"].getMaxOccurringAddress)
 
         # move files to targets
         transferStatusDict = self.__moveFilesToTargetFolders(rootFiles)
+
         return json.dumps(transferStatusDict, indent=4)
 
     def setOutputPath(self, outputPath):
         """
-        set the depth of scanning
+        set the output folder
 
         :type outputPath: string
         :param outputPath: the output folder where the files needs to be moved
         """
 
         error = "The specified output directory doesn't exist."
-        assert self.__isValidDir(outputPath), error
+        assert self.isValidDir(outputPath), error
         self.outputPath = outputPath
 
     def setDepth(self, depth):

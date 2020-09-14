@@ -5,6 +5,7 @@
 import os
 import sys
 import emoji
+import json
 
 from collections import OrderedDict
 from clint.textui import puts, colored
@@ -80,8 +81,8 @@ def basicScanner():
 
         try:
             scanner = simplescanner.SimpleScanner()
-            fileStatus = scanner.readDirectory(inputPath, outputPath=outputPath)
-
+            fileStatusJson = scanner.readDirectory(inputPath, outputPath=outputPath)
+            fileStatus = json.loads(fileStatusJson)
             printAppBanner()
 
             puts(colored.green("\nFiles moved: {}".format(len(fileStatus["Moved"]))))
@@ -136,8 +137,8 @@ def intelligentScanner():
 
         try:
             scanner = advancedscanner.AdvancedScanner()
-            fileStatus = scanner.readDirectory(inputPath, outputPath=outputPath, depth=depth)
-
+            fileStatusJson = scanner.readDirectory(inputPath, outputPath=outputPath, depth=depth)
+            fileStatus = json.loads(fileStatusJson)
             printAppBanner()
 
             puts(colored.green("\nFiles moved: {}".format(len(fileStatus["Moved"]))))

@@ -19,7 +19,7 @@ setup(
     description="An Intelligent Utility to organize your files in the way you like",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/ab-anand/IKreta',
+    url='https://github.com/ab-anand/FileZen',
     license='MIT',
     install_requires=[
             "pathlib >= 1.0.1",
@@ -28,7 +28,7 @@ setup(
     # dependency_links=dependency_links,
     # adding package data to it
     packages=find_packages(exclude=['contrib', 'docs']),
-    download_url='https://github.com/ab-anand/IKreta/tarball/' + __version__,
+    download_url='https://github.com/ab-anand/FileZen/tarball/' + __version__,
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
