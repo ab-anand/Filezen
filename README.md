@@ -6,5 +6,7 @@ An intelligent file organizer in the form of a module.
 
 ---
 
-`DOCUMENTATION`: `IN PROGRESS`
+**DOCUMENTATION**: `IN PROGRESS`
+
+Link for basic usage docs: [https://filezen.readthedocs.io/en/latest/](https://filezen.readthedocs.io/en/latest/)
 

@@ -1,7 +1,7 @@
 .. INCLUDE:: badges.rst
 
 
-filezen
+Filezen
 =======
 |readthedocs.org| |license|
 
