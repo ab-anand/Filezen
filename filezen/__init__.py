@@ -1,4 +1,1 @@
-"""
-Imports class 'Kreta'
-"""
 
