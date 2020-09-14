@@ -1,3 +1,10 @@
 ## FileZen
+[![Documentation Status](https://readthedocs.org/projects/filezen/badge/?version=latest)](https://filezen.readthedocs.io/en/latest/?badge=latest)
+ ![License Badge](https://img.shields.io/github/license/ab-anand/FileZen?color=red)
+ 
+An intelligent file organizer in the form of a module.
 
-An intelligent file organizer
+---
+
+`DOCUMENTATION`: `IN PROGRESS`
+
