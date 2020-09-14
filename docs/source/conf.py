@@ -18,6 +18,9 @@ sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
 from filezen.version import VERSION
 
 
+# The master toctree document.
+master_doc = 'index'
+
 # -- Project information -----------------------------------------------------
 
 project = 'FileZen'
