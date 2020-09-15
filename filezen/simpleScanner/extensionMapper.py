@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Contains dictionary of mappings for simple scanning.
+Defines the folders where a particular filetype will be moved.
+"""
+
 extensionsToFolder = {
     ".pdf": "k-Documents",
     ".doc": "k-Documents",

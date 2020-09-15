@@ -23,7 +23,7 @@ master_doc = 'index'
 
 # -- Project information -----------------------------------------------------
 
-project = 'FileZen'
+project = 'Filezen'
 copyright = '2020, Abhinav Anand'
 author = 'Abhinav Anand'
 

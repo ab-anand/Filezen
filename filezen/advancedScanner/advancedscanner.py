@@ -3,7 +3,7 @@
 
 """
 NOTE ON ADVANCEDSCANNER
-=====================
+=======================
 
 * This program uses the FREQUENCYHEAP to
 maintain the most used folder location to store

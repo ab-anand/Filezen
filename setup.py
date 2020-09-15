@@ -19,7 +19,7 @@ setup(
     description="An Intelligent Utility to organize your files in the way you like",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/ab-anand/FileZen',
+    url='https://github.com/ab-anand/Filezen',
     license='MIT',
     install_requires=[
             "pathlib >= 1.0.1",
@@ -40,7 +40,6 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3 :: Only",
         "Topic :: System",
         "Topic :: System :: Operating System",
         "Topic :: Utilities",

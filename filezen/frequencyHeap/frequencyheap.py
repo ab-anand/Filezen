@@ -3,11 +3,14 @@
 
 """
 NOTE ON FREQUENCYHEAP
-===================== \
+=====================
+
 * This program will maintain a heap of file
-locations according to their occurrences. \
+locations according to their occurrences.
+
 * It helps to get the folder location where a
-file of a particular type is stored. \
+file of a particular type is stored.
+
 """
 
 from collections import Counter
