@@ -33,12 +33,14 @@ class TestScanner(unittest.TestCase):
     def test_readRootFiles(self):
         cwd = os.getcwd()
         result = self.scanner.readRootFiles(cwd)
-        correct_answer = ["test_simpleScanner.py", "test_scanner.py", "__init__.py", "test_advancedScanner.py", "test_frequencyHeap.py"]
-        correct_answer = [os.path.join(cwd, file) for file in correct_answer]
-        self.assertEqual(correct_answer, result)
+        answer = ["test_simpleScanner.py", "test_scanner.py", "__init__.py",
+                  "test_advancedScanner.py", "test_frequencyHeap.py"]
+        answer = [os.path.join(cwd, file) for file in answer]
+
+        self.assertEqual(answer, result)
 
     def test_checkAndMove(self):
-        test_file = "scantestfile.txt"
+        test_file = "scannerTestFile.txt"
         with open(test_file, 'w') as fp:
             pass
 
