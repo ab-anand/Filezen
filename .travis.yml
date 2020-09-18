@@ -7,5 +7,5 @@ python:
   - "3.6"
 before_install:
   - pip install "pathlib >= 1.0.1"
-  - pip install "setuptools >= 44.1.1"
+  - pip install setuptools
 script: python -m unittest discover tests
