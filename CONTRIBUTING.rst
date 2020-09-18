@@ -47,22 +47,23 @@ Hack away!
 To do
 ~~~~~
 
--  [X] Add translate module
--  [X] Add an option like `JSON=False` or `JSON=True` where the former returns a list object
+-  [X] Confirmation to move rename file if a file with a same name is already present
+-  [X] Some more unittests
+-  [X] Maybe a cool Project banner
 
 Tests
 ~~~~~
 
-``Fileze`` uses ``unittesting`` for testing purposes.
+``Filezen`` uses ``unittesting`` for testing purposes.
 
 Running the test cases
 
 .. code:: bash
 
-.........
-----------------------------------------------------------------------
-Ran 9 tests in 0.008s
+    .........
+    ----------------------------------------------------------------------
+    Ran 9 tests in 0.008s
 
-OK
+    OK
 
 
