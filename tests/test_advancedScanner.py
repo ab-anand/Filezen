@@ -1,4 +1,6 @@
 import unittest
+import sys
+sys.dont_write_bytecode = True
 
 
 class MyTestCase(unittest.TestCase):

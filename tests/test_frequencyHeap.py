@@ -1,5 +1,7 @@
 import unittest
 import sys
+
+sys.dont_write_bytecode = True
 from filezen.frequencyHeap import frequencyheap
 
 sys.path.insert(0, '..')
@@ -12,7 +14,7 @@ class TestFrequencyHeap(unittest.TestCase):
         self.heap.appendAddress("home/Documents/")
         self.heap.appendAddress("home/Documents/")
         self.heap.appendAddress("home/Downloads/")
-    
+
     def test_appendAddress(self):
         self.heap.appendAddress("home/Documents/")
         self.heap.appendAddress("home/Documents/")
@@ -20,7 +22,7 @@ class TestFrequencyHeap(unittest.TestCase):
         result = len(self.heap.getValueList)
         correct_answer = 6
         self.assertEqual(result, correct_answer)
-        
+
     def test_getMaxOccurringAddress(self):
         result = self.heap.getMaxOccurringAddress
         correct_answer = "home/Documents/"
