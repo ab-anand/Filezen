@@ -37,7 +37,7 @@ class TestScanner(unittest.TestCase):
                   "test_advancedScanner.py", "test_frequencyHeap.py"]
         answer = [os.path.join(cwd, file) for file in answer]
 
-        self.assertEqual(answer, result)
+        self.assertEqual(sorted(answer), sorted(result))
 
     def test_checkAndMove(self):
         test_file = "scannerTestFile.txt"

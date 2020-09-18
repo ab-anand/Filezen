@@ -5,4 +5,7 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
+before_install:
+  - pip install "pathlib >= 1.0.1"
+  - pip install "setuptools >= 44.1.1"
 script: python -m unittest discover tests
