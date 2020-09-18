@@ -16,7 +16,7 @@ setup(
     author='Abhinav Anand',
     version=VERSION,
     author_email='abhinavanand1905@gmail.com',
-    description="An Intelligent Utility to organize your files in the way you like",
+    description="An Intelligent file organizer module that reads your file storing pattern",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/ab-anand/Filezen',
