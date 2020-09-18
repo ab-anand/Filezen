@@ -1,9 +1,31 @@
 import unittest
+import sys
+import os
+import shutil
+from filezen.simpleScanner import simplescanner
+
+sys.path.insert(0, '..')
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+class TestSimpleScanner(unittest.TestCase):
+
+    def setUp(self) -> None:
+        self.simpleScanner = simplescanner.SimpleScanner()
+        cwd = os.getcwd()
+        test_directory = "scantest"
+        path = os.path.join(cwd, test_directory)
+        if not os.path.exists(path):
+            os.mkdir(path)
+        self.test_dir_path = path
+
+    def test_setOutputPath(self):
+        self.simpleScanner.setOutputPath(self.test_dir_path)
+        result = self.simpleScanner.outputPath
+
+        self.assertEqual(self.test_dir_path, result)
+
+    def tearDown(self) -> None:
+        shutil.rmtree(self.test_dir_path, ignore_errors=True)
 
 
 if __name__ == '__main__':

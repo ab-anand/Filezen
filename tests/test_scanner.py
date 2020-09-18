@@ -31,7 +31,7 @@ class TestScanner(unittest.TestCase):
         self.assertEqual(result_2, correct_answer_2)
 
     def test_readRootFiles(self):
-        cwd = os.getcwd()
+        cwd = os.path.join(os.getcwd(), "tests")
         result = self.scanner.readRootFiles(cwd)
         answer = ["test_simpleScanner.py", "test_scanner.py", "__init__.py",
                   "test_advancedScanner.py", "test_frequencyHeap.py"]
