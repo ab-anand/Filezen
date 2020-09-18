@@ -1,7 +1,6 @@
 import unittest
 import sys
 
-sys.dont_write_bytecode = True
 import os
 import shutil
 from filezen.simpleScanner import simplescanner

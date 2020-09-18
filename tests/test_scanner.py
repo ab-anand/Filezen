@@ -1,6 +1,5 @@
 import unittest
 import sys
-sys.dont_write_bytecode = True
 import os
 import shutil
 from filezen.scanner import scanner
@@ -38,7 +37,13 @@ class TestScanner(unittest.TestCase):
                   "test_advancedScanner.py", "test_frequencyHeap.py"]
         answer = [os.path.join(cwd, file) for file in answer]
 
-        self.assertEqual(sorted(answer), sorted(result))
+        # avoid pyc files for python 2.7
+        correct_result = []
+        for res in result:
+            if not res.endswith("pyc"):
+                correct_result.append(res)
+
+        self.assertEqual(sorted(answer), sorted(correct_result))
 
     def test_checkAndMove(self):
         test_file = "scannerTestFile.txt"
