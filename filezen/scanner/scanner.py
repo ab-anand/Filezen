@@ -88,7 +88,7 @@ class Scanner:
         """
 
         try:
-            _ = shutil.move(sourceFile, destination, copy_function=shutil.copytree)
+            _ = shutil.move(sourceFile, destination)
             return 1
         except shutil.Error:
             return 0
