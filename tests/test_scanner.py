@@ -5,6 +5,7 @@ import shutil
 from filezen.scanner import scanner
 
 sys.path.insert(0, '..')
+sys.dont_write_bytecode = True
 
 
 class TestScanner(unittest.TestCase):
