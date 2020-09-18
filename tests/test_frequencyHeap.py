@@ -7,7 +7,7 @@ sys.path.insert(0, '..')
 
 class TestFrequencyHeap(unittest.TestCase):
 
-    def setUp(self) -> None:
+    def setUp(self):
         self.heap = frequencyheap.MaxFrequency()
         self.heap.appendAddress("home/Documents/")
         self.heap.appendAddress("home/Documents/")

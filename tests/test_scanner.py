@@ -8,7 +8,7 @@ sys.path.insert(0, '..')
 
 
 class TestScanner(unittest.TestCase):
-    def setUp(self) -> None:
+    def setUp(self):
         self.scanner = scanner.Scanner()
         cwd = os.getcwd()
         test_directory = "scantest"
@@ -52,7 +52,7 @@ class TestScanner(unittest.TestCase):
         correct_answer_2 = False
         self.assertEqual(result_2, correct_answer_2)
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         shutil.rmtree(self.test_dir_path, ignore_errors=True)
 
 

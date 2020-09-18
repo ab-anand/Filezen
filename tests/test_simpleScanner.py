@@ -9,7 +9,7 @@ sys.path.insert(0, '..')
 
 class TestSimpleScanner(unittest.TestCase):
 
-    def setUp(self) -> None:
+    def setUp(self):
         self.simpleScanner = simplescanner.SimpleScanner()
         cwd = os.getcwd()
         test_directory = "scantest"
@@ -24,7 +24,7 @@ class TestSimpleScanner(unittest.TestCase):
 
         self.assertEqual(self.test_dir_path, result)
 
-    def tearDown(self) -> None:
+    def tearDown(self):
         shutil.rmtree(self.test_dir_path, ignore_errors=True)
 
 
