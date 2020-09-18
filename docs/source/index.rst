@@ -3,7 +3,7 @@
 
 Filezen
 =======
-|readthedocs.org| |license|
+|readthedocs.org| |license| |build|
 
 
 .. toctree::
