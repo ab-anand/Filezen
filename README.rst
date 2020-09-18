@@ -6,8 +6,8 @@ Filezen
 
 |readthedocs.org| |license| |build|
 
-An Intelligent file organizer which reads your file storing pattern & move
-the cluttered files accordingly.
+*An Intelligent file organizer module which reads your file storing pattern & move
+the cluttered files accordingly!*
 
 :Author: Abhinav Anand
 
@@ -20,8 +20,8 @@ What is it
 ---------------
 `[back to top] <https://github.com/ab-anand/Filezen#filezen>`__
 
-Let's accept, no one likes to organize files on a regular basis. Even if you do, you
-wouldn't want to do it everytime you download a new file.
+*Let's accept, no one likes to organize files on a regular basis. Even if you do, you
+wouldn't want to do it everytime you download a new file.*
 
 Guess what! Filezen got you covered.
 
