@@ -1,5 +1,3 @@
-.. INCLUDE:: docs/source/badges.rst
-
 .. figure:: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQw8G45wF_X-W_IA4Uce47WPIScVd3Ixpj0UA&usqp=CAU
    :alt:
 
@@ -25,14 +23,12 @@ What is it
 Let's accept, no one likes to organize files on a regular basis. Even if you do, you
 wouldn't want to do it everytime you download a new file.
 
-And sometimes it
-really gets messy when you're looking for an important file which you saved last week.
 Guess what! Filezen got you covered.
 
-Given a folder of your cluttered or unorganized files, using ``Filezen``, you can achieve
+Given a folder of your cluttered/unorganized files, using ``Filezen``, you can achieve
 the following
 
-- If you're one of those who has never maintained a particular folder for a particular file types. Then ``Filezen`` can create suitable folders and organize your file into them.
+- If you've never maintained specific directories for your files. Then ``Filezen`` can create suitable folders and organize your file into them.
 
 - If you already have a pattern of directories for storing different files. Then ``Filezen`` can read your file storing pattern and move your files accordingly.
 
@@ -41,6 +37,11 @@ the following
 
 
 
-
+.. |readthedocs.org| image:: https://readthedocs.org/projects/filezen/badge/?version=latest
+   :target: https://filezen.readthedocs.io/en/latest/index.html
+.. |license| image:: https://img.shields.io/github/license/ab-anand/FileZen?color=red
+   :target: https://github.com/ab-anand/FileZen/blob/master/LICENSE
+.. |build| image:: https://travis-ci.com/ab-anand/Filezen.svg?branch=master
+   :target: https://github.com/ab-anand/FileZen
 
 
