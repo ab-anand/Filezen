@@ -38,7 +38,7 @@ Features
 
 - **Advanced Scanning**
 - **Basic Scanning**
-- Minimum dependencies(just uses ``Pathlib`` if only you're working with Python 2.x)
+- Minimum dependencies ( just uses ``Pathlib`` if only you're working with Python 2.x )
 - Easy to use
 - Fast!
 - Support
