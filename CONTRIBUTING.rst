@@ -47,9 +47,9 @@ Hack away!
 To do
 ~~~~~
 
--  [X] Confirmation to move rename file if a file with a same name is already present
--  [X] Some more unittests
--  [X] Maybe a cool Project banner
+.. [*] Confirmation to move rename file if a file with a same name is already present
+.. [*] Some more unittests
+.. [*] Maybe a cool Project banner
 
 Tests
 ~~~~~
