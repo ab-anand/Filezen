@@ -1,2 +1,2 @@
 pathlib >= 1.0.1
-setuptools >= 44.1.1
+setuptools
