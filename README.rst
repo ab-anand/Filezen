@@ -1,7 +1,7 @@
 .. figure:: https://i.imgur.com/7X144BM.jpg
-    :width: 1152px
+    :width: 576px
     :align: center
-    :height: 864px
+    :height: 432px
    :alt:
 
 Filezen
