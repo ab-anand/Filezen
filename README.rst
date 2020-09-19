@@ -1,4 +1,4 @@
-.. figure:: https://i.imgur.com/VXH1Uha.jpg
+.. figure:: https://i.imgur.com/7X144BM.jpg
    :alt:
 
 Filezen
