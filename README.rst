@@ -79,7 +79,7 @@ Usage
 
 **Simple Scanner**
 
-.. figure:: https://i.imgur.com/VFmX9Yf.png
+.. figure:: https://i.imgur.com/VvLNBwU.gif
    :alt:
 
 Documentation
