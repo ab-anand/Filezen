@@ -82,6 +82,31 @@ Usage
 .. figure:: https://i.imgur.com/KEOFHQn.gif
    :alt:
 
+- Simple Scanner uses a predefined `mapping <https://github.com/ab-anand/Filezen/blob/master/filezen/simpleScanner/extensionMapper.py/>`__ of filetypes to folder.
+- Based on this mapping it creates directories and organizes files into them as shown in the above Fig.
+- Using ``Simple Scanner``
+
+.. code:: python
+
+    >>> from filezen.simpleScanner import simpleScanner as SSC
+    >>> scanner = SSC.SimpleScanner()
+    >>> input_directory = "/home/abhinav/Downloads"
+    >>> result = scanner.readDirectory(input_directory)
+    >>> print(result)
+    {
+        "Moved": [
+            "FileA.pdf",
+            "FileB.txt",
+            "FileC.mp4",
+            "FileD.log",
+            "FileB.xyz"
+        ],
+        "NotMoved": [
+
+        ]
+    }
+
+
 **Advanced Scanner**
 
 .. figure:: https://i.imgur.com/krTnAZU.gif
