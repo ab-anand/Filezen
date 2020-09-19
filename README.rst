@@ -1,4 +1,4 @@
-.. figure:: https://i.imgur.com/7X144BM.jpg
+.. figure:: https://i.imgur.com/opeYy4q.jpg
     :width: 576px
     :align: center
     :height: 432px
