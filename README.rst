@@ -117,8 +117,8 @@ Advanced Scanner
 .. figure:: https://i.imgur.com/L2aARhU.gif
    :alt:
 
-- ``Advanced Scanner`` maintains a ``heap`` for each filetype it encounters while scanning the *Output Directory*.
-- With the help of this heap it finally decides the directory where a particular filetype has mostly occurred and thus moving the file into that directory.
+- ``Advanced Scanner`` maintains a ``heap`` for each filetype/file-extension it encounters while scanning the *Output Directory*.
+- With the help of this heap it finally decides the directory where a particular filetype has mostly occurred and thus moving the all such files into that directory.
 - As shown in the above image, ``Advanced Scanner`` scans the child directories also.
 - The level of child directories to scan is decided by ``depth`` parameter as shown in the example below.
 - By default, ``depth = 5``
@@ -154,7 +154,8 @@ Applications
 ~~~~~~~~~~~~
 
 - KRETA - It is a command line application which uses ``Filezen`` to organize file.
-
+.. figure:: https://i.imgur.com/PPiTMY6.gif
+    :alt:
 
 Documentation
 -------------
