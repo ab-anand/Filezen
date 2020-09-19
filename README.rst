@@ -153,7 +153,7 @@ Advanced Scanner
 Applications
 ~~~~~~~~~~~~
 
-- KRETA - It is a command line application which uses ``Filezen`` to organize file.
+- `KRETA  <https://github.com/ab-anand/Filezen/>`__ - It is a command line application which uses ``Filezen`` to organize file.
 
 .. figure:: https://i.imgur.com/PPiTMY6.gif
     :alt:
