@@ -1,4 +1,4 @@
-.. figure:: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQw8G45wF_X-W_IA4Uce47WPIScVd3Ixpj0UA&usqp=CAU
+.. figure:: https://i.imgur.com/VXH1Uha.jpg
    :alt:
 
 Filezen
