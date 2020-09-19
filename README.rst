@@ -77,8 +77,8 @@ Usage
 -----
 `[back to top] <https://github.com/ab-anand/Filezen#filezen>`__
 
-**Simple Scanner**
-
+Simple Scanner
+~~~~~~~~~~~~~~
 .. figure:: https://i.imgur.com/KEOFHQn.gif
    :alt:
 
@@ -110,8 +110,8 @@ Usage
 - If a file with the same name is already present in the *Output Directory* then ``Simple Scanner`` would ignore the file and leave it to the user.
 - If no *Output Directory* is specified, then ``Simple Scanner`` would create folders in the *Input Directory* itself.
 
-**Advanced Scanner**
-
+Advanced Scanner
+~~~~~~~~~~~~~~~~
 .. figure:: https://i.imgur.com/krTnAZU.gif
    :alt:
 
