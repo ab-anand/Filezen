@@ -139,7 +139,7 @@ class AdvancedScanner(scanner.Scanner):
 
         return status
 
-    def readDirectory(self, inputPath, depth=5, outputPath=None):
+    def cleanDirectory(self, inputPath, depth=5, outputPath=None):
         """
         The main functions which takes inputPath,
         outputPath, depth and validates them. Then

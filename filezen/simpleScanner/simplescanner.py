@@ -74,7 +74,7 @@ class SimpleScanner(scanner.Scanner):
 
         return status
 
-    def readDirectory(self, inputPath, outputPath=None):
+    def cleanDirectory(self, inputPath, outputPath=None):
         """
         The main functions which takes inputPath &
         outputPath and validates them. Then

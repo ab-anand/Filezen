@@ -12,6 +12,7 @@ extensionsToFolder = {
     ".docx": "fz-Documents",
     ".txt": "fz-Documents",
     ".ppt": "fz-Documents",
+    ".csv": "fz-Documents",
     ".pptx": "fz-Documents",
     ".xls": "fz-Documents",
     ".xlsx": "fz-Documents",

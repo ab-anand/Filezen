@@ -93,7 +93,7 @@ Simple Scanner
     >>> scanner = SSC.SimpleScanner()
     >>> input_directory = "/home/abhinav/Downloads"
     >>> output_directory = "/home/abhinav/Documents"
-    >>> result = scanner.readDirectory(input_directory, outputPath=output_directory)
+    >>> result = scanner.cleanDirectory(input_directory, outputPath=output_directory)
     >>> print(result)
     '{
         "Moved": [
@@ -131,7 +131,7 @@ Advanced Scanner
     >>> input_directory = "/home/abhinav/Downloads"
     >>> output_directory = "/home/abhinav/Documents"
     >>> depth = 3
-    >>> result = scanner.readDirectory(input_directory, outputPath=output_directory, depth=depth)
+    >>> result = scanner.cleanDirectory(input_directory, outputPath=output_directory, depth=depth)
     >>> print(result)
     '{
         "Moved": [
