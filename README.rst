@@ -1,8 +1,6 @@
 .. figure:: https://i.imgur.com/opeYy4q.jpg
-    :width: 576px
-    :align: center
-    :height: 432px
-   :alt:
+    :figclass: align-center
+    :alt:
 
 Filezen
 =======
