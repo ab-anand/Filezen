@@ -107,7 +107,7 @@ class SimpleScanner(scanner.Scanner):
         # move files to targets
         transferStatusDict = self.__moveFilesToTargetFolders(rootFiles)
 
-        return json.dumps(transferStatusDict, indent=4)
+        return json.dumps(transferStatusDict, indent=4, sort_keys=True)
 
     def setOutputPath(self, outputPath):
         """

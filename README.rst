@@ -75,7 +75,12 @@ Option 2: Installing from source (Only if you must)
 
 Usage
 -----
+`[back to top] <https://github.com/ab-anand/Filezen#filezen>`__
 
+**Simple Scanner**
+
+.. image:: https://drive.google.com/file/d/1RGpCgjUcyBsVvjg-H2AkkideL5pVTbkx/view?usp=sharing
+   :alt:
 
 Documentation
 -------------
