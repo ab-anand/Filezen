@@ -5,7 +5,7 @@
 Filezen
 =======
 
-|readthedocs.org| |license| |build|
+|pypi| |readthedocs.org| |license| |build|
 
 *An Intelligent file organizer module which reads your file storing pattern & move
 the cluttered files accordingly!*
@@ -51,16 +51,16 @@ Installation
 ------------
 `[back to top] <https://github.com/ab-anand/Filezen#filezen>`__
 
-Option 1: installing through `pip <https://test.pypi.org/project/Filezen>`__ (Recommended)
+Option 1: installing through `pip <https://pypi.org/project/Filezen/>`__ (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`pypi package link <https://test.pypi.org/project/Filezen>`__
+`pypi package link <https://pypi.org/project/Filezen/>`__
 
-``$ pip install -i https://test.pypi.org/simple/ Filezen``
+``$ pip install Filezen``
 
 If you are behind a proxy
 
-``$ pip --proxy [username:password@]domain_name:port install -i https://test.pypi.org/simple/ Filezen``
+``$ pip --proxy [username:password@]domain_name:port install -i https://pypi.org/project/Filezen/``
 
 **Note:** If you get ``command not found`` then
 ``$ sudo apt-get install python-pip`` should fix that
@@ -198,5 +198,6 @@ Built with ♥ by `Abhinav Anand <https://github.com/ab-anand/>`__ under the `MI
    :target: https://github.com/ab-anand/FileZen/blob/master/LICENSE
 .. |build| image:: https://travis-ci.com/ab-anand/Filezen.svg?branch=master
    :target: https://github.com/ab-anand/FileZen
-
+.. |pypi| image:: https://img.shields.io/pypi/pyversions/Filezen
+    :target: https://pypi.org/project/Filezen/
 
