@@ -41,6 +41,7 @@ Features
 - Minimum dependencies ( just uses ``Pathlib`` if only you're working with Python 2.x )
 - Easy to use
 - Fast!
+- Returns ``JSON`` objects
 - Support
     - **OS Support**: Linux, Windows, Mac
     - **Language Support**: Python 2.x, 3.x
@@ -108,11 +109,12 @@ Simple Scanner
     }'
 
 - If a file with the same name is already present in the *Output Directory* then ``Simple Scanner`` would ignore the file and leave it to the user.
+- The filename which hasn't being because of the reason stated above would be returned in the ``NotMoved`` array of the result.
 - If no *Output Directory* is specified, then ``Simple Scanner`` would create folders in the *Input Directory* itself.
 
 Advanced Scanner
 ~~~~~~~~~~~~~~~~
-.. figure:: https://i.imgur.com/krTnAZU.gif
+.. figure:: https://i.imgur.com/L2aARhU.gif
    :alt:
 
 - ``Advanced Scanner`` maintains a ``heap`` for each filetype it encounters while scanning the *Output Directory*.
@@ -144,8 +146,14 @@ Advanced Scanner
         ]
     }'
 
-- Similar to ``Simple Scanner``, if a file with the same name is already present in the *Output Directory* then ``Simple Scanner`` would ignore the file and leave it to the user.
-- If no *Output Directory* is specified, then ``Simple Scanner`` would create folders in the *Input Directory* itself.
+- Similar to ``Simple Scanner``, if a file with the same name is already present in the *Output Directory* then ``Advanced Scanner`` would ignore the file and leave it to the user.
+- The filename which hasn't being because of the reason stated above would be returned in the ``NotMoved`` array of the result.
+- If no *Output Directory* is specified, then ``Advanced Scanner`` would read the folders in the *Input Directory* itself and move accordingly.
+
+Applications
+~~~~~~~~~~~~
+
+- KRETA - It is a command line application which uses ``Filezen`` to organize file.
 
 
 Documentation

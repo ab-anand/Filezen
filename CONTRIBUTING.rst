@@ -47,9 +47,9 @@ Hack away!
 To do
 ~~~~~
 
-.. [*] Confirmation to move rename file if a file with a same name is already present
+.. [*] A Desktop app using libraries like `Tkinter <https://docs.python.org/3/library/tkinter.html/>`__ which utilizes ``Filezen`` to organize files.
 .. [*] Some more unittests
-.. [*] Maybe a cool Project banner
+.. [*] Confirmation to move rename file if a file with a same name is already present
 
 Tests
 ~~~~~
@@ -59,6 +59,8 @@ Tests
 Running the test cases
 
 .. code:: bash
+
+    $ python -m unittest discover tests
 
     .........
     ----------------------------------------------------------------------
