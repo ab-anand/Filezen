@@ -82,18 +82,19 @@ Usage
 .. figure:: https://i.imgur.com/KEOFHQn.gif
    :alt:
 
-- Simple Scanner uses a predefined `mapping <https://github.com/ab-anand/Filezen/blob/master/filezen/simpleScanner/extensionMapper.py/>`__ of filetypes to folder.
+- ``Simple Scanner`` uses a predefined `mapping <https://github.com/ab-anand/Filezen/blob/master/filezen/simpleScanner/extensionMapper.py/>`__ of filetypes to folder.
 - Based on this mapping it creates directories and organizes files into them as shown in the above Fig.
 - Using ``Simple Scanner``
 
 .. code:: python
 
-    >>> from filezen.simpleScanner import simpleScanner as SSC
+    >>> from filezen.simpleScanner import simplescanner as SSC
     >>> scanner = SSC.SimpleScanner()
     >>> input_directory = "/home/abhinav/Downloads"
-    >>> result = scanner.readDirectory(input_directory)
+    >>> output_directory = "/home/abhinav/Documents"
+    >>> result = scanner.readDirectory(input_directory, outputPath=output_directory)
     >>> print(result)
-    {
+    '{
         "Moved": [
             "FileA.pdf",
             "FileB.txt",
@@ -104,13 +105,48 @@ Usage
         "NotMoved": [
 
         ]
-    }
+    }'
 
+- If a file with the same name is already present in the *Output Directory* then ``Simple Scanner`` would ignore the file and leave it to the user.
+- If no *Output Directory* is specified, then ``Simple Scanner`` would create folders in the *Input Directory* itself.
 
 **Advanced Scanner**
 
 .. figure:: https://i.imgur.com/krTnAZU.gif
    :alt:
+
+- ``Advanced Scanner`` maintains a ``heap`` for each filetype it encounters while scanning the *Output Directory*.
+- With the help of this heap it finally decides the directory where a particular filetype has mostly occurred and thus moving the file into that directory.
+- As shown in the above image, ``Advanced Scanner`` scans the child directories also.
+- The level of child directories to scan is decided by ``depth`` parameter as shown in the example below.
+- By default, ``depth = 5``
+- Using ``Advanced Scanner``
+
+.. code:: python
+
+    >>> from filezen.advancedScanner import advancedscanner as ASC
+    >>> scanner = ASC.AdvancedScanner()
+    >>> input_directory = "/home/abhinav/Downloads"
+    >>> output_directory = "/home/abhinav/Documents"
+    >>> depth = 3
+    >>> result = scanner.readDirectory(input_directory, outputPath=output_directory, depth=depth)
+    >>> print(result)
+    '{
+        "Moved": [
+            "FileA.pdf",
+            "FileB.txt",
+            "FileC.mp4",
+            "FileD.log",
+            "FileB.xyz"
+        ],
+        "NotMoved": [
+
+        ]
+    }'
+
+- Similar to ``Simple Scanner``, if a file with the same name is already present in the *Output Directory* then ``Simple Scanner`` would ignore the file and leave it to the user.
+- If no *Output Directory* is specified, then ``Simple Scanner`` would create folders in the *Input Directory* itself.
+
 
 Documentation
 -------------
