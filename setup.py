@@ -7,7 +7,7 @@ from filezen.version import VERSION
 __version__ = VERSION
 
 
-with open("README.md", "r", encoding="utf-8") as f:
+with open("README.rst", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 
@@ -18,7 +18,7 @@ setup(
     author_email='abhinavanand1905@gmail.com',
     description="An Intelligent file organizer module that reads your file storing pattern",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/x-rst",
     url='https://github.com/ab-anand/Filezen',
     license='MIT',
     install_requires=[
