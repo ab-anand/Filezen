@@ -3,7 +3,7 @@
 
 Filezen
 =======
-|readthedocs.org| |license| |build|
+|readthedocs.org| |license| |build| |pypi|
 
 
 .. toctree::

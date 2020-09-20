@@ -4,3 +4,5 @@
    :target: https://github.com/ab-anand/FileZen/blob/master/LICENSE
 .. |build| image:: https://travis-ci.com/ab-anand/Filezen.svg?branch=master
    :target: https://github.com/ab-anand/FileZen
+.. |pypi| image:: https://img.shields.io/pypi/pyversions/Filezen
+    :target: https://pypi.org/project/Filezen/
