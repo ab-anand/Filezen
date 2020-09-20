@@ -5,7 +5,7 @@
 Filezen
 =======
 
-|pypi| |readthedocs.org| |license| |build|
+|pypi| |readthedocs.org| |license| |build| |version|
 
 *An Intelligent file organizer module which reads your file storing pattern & move
 the cluttered files accordingly!*
@@ -74,6 +74,10 @@ Option 2: Installing from source (Only if you must)
     $ cd Filezen/
     $ pip install -r requirements.txt
     $ python setup.py install
+
+**Note:** If you get ``permission denied`` then
+``$ sudo python setup.py install`` should fix that
+
 
 Usage
 -----
@@ -202,5 +206,7 @@ Built with ♥ by `Abhinav Anand <https://github.com/ab-anand/>`__ under the `MI
 .. |build| image:: https://travis-ci.com/ab-anand/Filezen.svg?branch=master
    :target: https://github.com/ab-anand/FileZen
 .. |pypi| image:: https://img.shields.io/pypi/pyversions/Filezen
+    :target: https://pypi.org/project/Filezen/
+.. |version| image:: https://badge.fury.io/py/Filezen.svg
     :target: https://pypi.org/project/Filezen/
 
