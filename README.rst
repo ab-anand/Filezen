@@ -60,7 +60,7 @@ Option 1: installing through `pip <https://pypi.org/project/Filezen/>`__ (Recomm
 
 If you are behind a proxy
 
-``$ pip --proxy [username:password@]domain_name:port install -i https://pypi.org/project/Filezen/``
+``$ pip --proxy [username:password@]domain_name:port install Filezen``
 
 **Note:** If you get ``command not found`` then
 ``$ sudo apt-get install python-pip`` should fix that
@@ -109,9 +109,8 @@ Simple Scanner
         ]
     }'
 
-- If a file with the same name is already present in the *Output Directory* then ``Simple Scanner`` would ignore the file and leave it to the user.
-- The filename which hasn't being because of the reason stated above would be returned in the ``NotMoved`` array of the result.
 - If no *Output Directory* is specified, then ``Simple Scanner`` would create folders in the *Input Directory* itself.
+- `Watch Simple Scanner in action <https://github.com/ab-anand/Filezen/blob/master/SIMPLESCANNER.rst>`__.
 
 Advanced Scanner
 ~~~~~~~~~~~~~~~~
@@ -147,9 +146,13 @@ Advanced Scanner
         ]
     }'
 
-- Similar to ``Simple Scanner``, if a file with the same name is already present in the *Output Directory* then ``Advanced Scanner`` would ignore the file and leave it to the user.
-- The filename which hasn't being because of the reason stated above would be returned in the ``NotMoved`` array of the result.
-- If no *Output Directory* is specified, then ``Advanced Scanner`` would read the folders in the *Input Directory* itself and move accordingly.
+- If no **Output Directory** is specified, then ``Advanced Scanner`` would read the folders in the **Input Directory** itself and move accordingly.
+- `Watch Advanced Scanner in action <https://github.com/ab-anand/Filezen/blob/master/ADVANCEDSCANNER.rst>`__.
+
+**Note:** If a file with the same name is already present in the **Output Directory** then ``Filezen`` would
+ignore the file and leave it to the user. In the resulting JSON, you'll get the all such filenames which
+were not moved in the ``NotMoved`` list.
+
 
 Applications
 ~~~~~~~~~~~~
