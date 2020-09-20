@@ -1,4 +1,4 @@
 Simple Scanner
 ==============
 
-..  image::  https://i.imgur.com/V99Myqg.gif
+..  image::  https://i.imgur.com/ndn1hRC.gif
