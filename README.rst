@@ -114,7 +114,6 @@ Simple Scanner
     }'
 
 - If no *Output Directory* is specified, then ``Simple Scanner`` would create folders in the *Input Directory* itself.
-- `Watch Simple Scanner in action <https://github.com/ab-anand/Filezen/blob/master/SIMPLESCANNER.rst>`__.
 
 Advanced Scanner
 ~~~~~~~~~~~~~~~~
@@ -151,7 +150,6 @@ Advanced Scanner
     }'
 
 - If no **Output Directory** is specified, then ``Advanced Scanner`` would read the folders in the **Input Directory** itself and move accordingly.
-- `Watch Advanced Scanner in action <https://github.com/ab-anand/Filezen/blob/master/ADVANCEDSCANNER.rst>`__.
 
 **Note:** If a file with the same name is already present in the **Output Directory** then ``Filezen`` would
 ignore the file and leave it to the user. In the resulting JSON, you'll get the all such filenames which
@@ -165,6 +163,10 @@ Applications
 
 .. figure:: https://i.imgur.com/PPiTMY6.gif
     :alt:
+
+- `Watch Simple Scanner in action with Kreta <https://github.com/ab-anand/Filezen/blob/master/SIMPLESCANNER.rst>`__.
+- `Watch Advanced Scanner in action with Kreta <https://github.com/ab-anand/Filezen/blob/master/ADVANCEDSCANNER.rst>`__.
+
 
 Documentation
 -------------
