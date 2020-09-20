@@ -140,7 +140,7 @@ Advanced Scanner
             "FileB.txt",
             "FileC.mp4",
             "FileD.log",
-            "FileB.xyz"
+            "FileE.xyz"
         ],
         "NotMoved": [
 
