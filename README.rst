@@ -5,7 +5,7 @@
 Filezen
 =======
 
-|version| |readthedocs.org| |build| |pypi| |license|
+|version| |readthedocs.org| |codecov| |build| |pypi| |license|
 
 *An Intelligent file organizer module which reads your file storing pattern & move
 the cluttered files accordingly!*
@@ -211,4 +211,5 @@ Built with ♥ by `Abhinav Anand <https://github.com/ab-anand/>`__ under the `MI
     :target: https://pypi.org/project/Filezen/
 .. |version| image:: https://img.shields.io/pypi/v/Filezen?color=orange
     :target: https://pypi.org/project/Filezen/
-
+.. |codecov| image:: https://codecov.io/gh/ab-anand/Filezen/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/ab-anand/Filezen
