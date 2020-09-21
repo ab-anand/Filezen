@@ -47,7 +47,7 @@ class TestScanner(unittest.TestCase):
 
     def test_checkAndMove(self):
         test_file = "scannerTestFile.txt"
-        with open(test_file, 'w') as fp:
+        with open(test_file, 'w') as _:
             pass
 
         result_1 = self.scanner.checkAndMove(test_file, self.test_dir_path)
