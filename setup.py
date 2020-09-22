@@ -11,7 +11,7 @@ try:
     if sys.version_info[:2] <= (2, 7):
         readme = open("README.rst")
     else:
-        readme = open("README.rst", "r", encoding="utf8")
+        readme = open("README.rst", encoding="utf8")
         long_description = str(readme.read())
 finally:
     readme.close()
