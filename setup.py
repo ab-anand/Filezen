@@ -9,12 +9,13 @@ __version__ = VERSION
 
 try:
     if sys.version_info[:2] <= (2, 7):
-        readme = open("README.rst")
+        with open("README.rst") as f:
+            long_description = f.read()
     else:
-        readme = open("README.rst", encoding="utf8")
-        long_description = str(readme.read())
+        with open("README.rst", encoding="utf8") as f:
+            long_description = f.read()
 finally:
-    readme.close()
+    f.close()
 
 setup(
     name='Filezen',
