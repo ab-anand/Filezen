@@ -4,7 +4,7 @@
 Filezen
 =======
 
-|readthedocs.org| |license| |build| |pypi|
+|version| |codecov| |readthedocs.org| |license| |build| |pypi| |deepsource|
 
 
 .. toctree::
