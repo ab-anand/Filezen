@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
+import sys
 from setuptools import setup, find_packages
 from filezen.version import VERSION
+
 __version__ = VERSION
 
-
-with open("README.rst", "r") as f:
-    long_description = f.read()
-
+try:
+    if sys.version_info[:2] <= (2, 7):
+        long_description = open("README.rst")
+    else:
+        long_description = open("README.rst", "r", encoding="utf8")
+finally:
+    long_description.close()
 
 setup(
     name='Filezen',
@@ -22,9 +26,9 @@ setup(
     url='https://github.com/ab-anand/Filezen',
     license='MIT',
     install_requires=[
-            "pathlib >= 1.0.1",
-            "setuptools >= 44.1.1"
-        ],
+        "pathlib >= 1.0.1",
+        "setuptools >= 44.1.1"
+    ],
     # dependency_links=dependency_links,
     # adding package data to it
     packages=find_packages(exclude=['contrib', 'docs']),
