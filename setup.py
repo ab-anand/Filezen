@@ -7,15 +7,14 @@ from filezen.version import VERSION
 
 __version__ = VERSION
 
-try:
-    if sys.version_info[:2] <= (2, 7):
-        with open("README.rst") as f:
-            long_description = f.read()
-    else:
-        with open("README.rst", encoding="utf8") as f:
-            long_description = f.read()
-finally:
-    f.close()
+
+if sys.version_info[:2] <= (2, 7):
+    with open("README.rst") as f:
+        long_description = f.read()
+else:
+    with open("README.rst", encoding="utf8") as f:
+        long_description = f.read()
+
 
 setup(
     name='Filezen',
