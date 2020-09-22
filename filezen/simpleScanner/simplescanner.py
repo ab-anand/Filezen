@@ -56,10 +56,7 @@ class SimpleScanner(scanner.Scanner):
         for file in rootFiles:
             fileExtension = self.getFileExtension(file)
 
-            if fileExtension in extensionsToFolder:
-                folderType = extensionsToFolder[fileExtension]
-            else:
-                folderType = extensionsToFolder["default"]
+            folderType = extensionsToFolder.get(fileExtension, extensionsToFolder["default"])
 
             completeFolderPath = os.path.join(self.outputPath, folderType)
 
