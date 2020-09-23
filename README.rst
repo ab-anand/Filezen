@@ -198,6 +198,7 @@ License
 
 Built with ♥ by `Abhinav Anand <https://github.com/ab-anand/>`__ under the `MIT License <https://github.com/ab-anand/Filezen/blob/master/LICENSE/>`__ ©
 
+You can find a copy of the License at `http://abhinav.mit-license.org/ <You can find a copy of the License at http://abhinav.mit-license.org/>`__
 
 
 
