@@ -121,9 +121,9 @@ Advanced Scanner
 
 - ``Advanced Scanner`` maintains a ``heap`` for each filetype/file-extension it encounters while scanning the **Output Directory**.
 - This ``heap`` contains all the directory addresses where a particular filetype(``e.g. "pdf"``) occurs.
-- The address having the highest number of occurrence of that filetype at the **top** of the ``heap``
+- The address having the highest number of occurrence of that filetype is at the **top** of the ``heap``
 - With the help of this heap it finally decides the directory where a particular filetype has mostly occurred and thus moving the all such files into that directory.
-- As shown in the above image, ``Advanced Scanner`` scans the ``child`` as well as ``sibling directories``(at the same level).
+- As shown in the above image, ``Advanced Scanner`` scans the ``child`` as well as ``sibling directories`` (at the same level).
 - The level of child directories to scan is decided by ``depth`` parameter as shown in the example below.
 - By default, ``depth = 5``
 - Using ``Advanced Scanner``
