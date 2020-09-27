@@ -218,5 +218,7 @@ You can find a copy of the License at `http://abhinav.mit-license.org/ <http://a
     :target: https://github.com/ab-anand/FileZen
 .. |producthunt| image:: https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=267022&theme=dark
     :width: 150px
+    :align: center
     :height: 60px
+    :figclass: align-center
     :target: https://www.producthunt.com/posts/filezen
