@@ -220,5 +220,5 @@ You can find a copy of the License at `http://abhinav.mit-license.org/ <http://a
     :target: https://www.producthunt.com/posts/filezen
     :width: 150px
     :height: 60px
-    :scale: 80 %
+    :scale: 50 %
 
