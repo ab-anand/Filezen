@@ -5,7 +5,7 @@
 Filezen
 =======
 
-|version| |readthedocs.org| |codecov| |build| |pypi| |license| |deepsource| |producthunt|
+|version| |readthedocs.org| |codecov| |build| |pypi| |license| |deepsource|
 
 *An Intelligent file organizer module which reads your file storing pattern & move
 the cluttered files accordingly!*
@@ -201,6 +201,7 @@ Built with ♥ by `Abhinav Anand <https://github.com/ab-anand/>`__ under the `MI
 You can find a copy of the License at `http://abhinav.mit-license.org/ <http://abhinav.mit-license.org/>`__
 
 
+|producthunt|
 
 .. |readthedocs.org| image:: https://readthedocs.org/projects/filezen/badge/?version=latest
    :target: https://filezen.readthedocs.io/en/latest/index.html
@@ -218,7 +219,5 @@ You can find a copy of the License at `http://abhinav.mit-license.org/ <http://a
     :target: https://github.com/ab-anand/FileZen
 .. |producthunt| image:: https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=267022&theme=dark
     :target: https://www.producthunt.com/posts/filezen
-    :width: 150px
-    :height: 60px
-    :scale: 50 %
+    :scale: 10 %
 
