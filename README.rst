@@ -5,7 +5,7 @@
 Filezen
 =======
 
-|version| |readthedocs.org| |codecov| |build| |pypi| |license| |deepsource|
+|version| |readthedocs.org| |codecov| |build| |pypi| |license| |deepsource| |producthunt|
 
 *An Intelligent file organizer module which reads your file storing pattern & move
 the cluttered files accordingly!*
@@ -159,7 +159,7 @@ were not moved in the ``NotMoved`` list.
 Applications
 ~~~~~~~~~~~~
 
-- `KRETA  <https://github.com/ab-anand/Filezen/>`__ - It is a command line application which uses ``Filezen`` to organize file.
+- `KRETA  <https://github.com/ab-anand/Kreta/>`__ - It is a command line application which uses ``Filezen`` to organize file.
 
 .. figure:: https://i.imgur.com/PPiTMY6.gif
     :alt:
@@ -216,3 +216,7 @@ You can find a copy of the License at `http://abhinav.mit-license.org/ <http://a
     :target: https://codecov.io/gh/ab-anand/Filezen
 .. |deepsource| image:: https://deepsource.io/gh/ab-anand/Filezen.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/ab-anand/Filezen/?ref=repository-badge
     :target: https://github.com/ab-anand/FileZen
+.. |producthunt| image:: https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=267022&theme=dark
+    :width: 200px
+    :height: 80px
+    :target: https://www.producthunt.com/posts/filezen
