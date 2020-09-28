@@ -5,7 +5,7 @@
 Filezen
 =======
 
-|version| |readthedocs.org| |codecov| |build| |pypi| |license| |deepsource|
+|version| |readthedocs.org| |codecov| |build| |pypi| |license| |deepsource| |coffee|
 
 *An Intelligent file organizer module which reads your file storing pattern & move
 the cluttered files accordingly!*
@@ -220,4 +220,6 @@ You can find a copy of the License at `http://abhinav.mit-license.org/ <http://a
 .. |producthunt| image:: https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=267022&theme=dark
     :target: https://www.producthunt.com/posts/filezen
     :scale: 10 %
+.. |coffee| image:: https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png
+    :target: https://www.buymeacoffee.com/abhiinav
 
