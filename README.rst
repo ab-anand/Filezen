@@ -221,5 +221,5 @@ You can find a copy of the License at `http://abhinav.mit-license.org/ <http://a
 .. |producthunt| image:: https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=267022&theme=dark
     :target: https://www.producthunt.com/posts/filezen
     :scale: 10 %
-.. |coffee| image:: https://i.imgur.com/qeNEiac.png
+.. |coffee| image:: https://i.imgur.com/qeNEiac.png?1
     :target: https://www.buymeacoffee.com/abhiinav
