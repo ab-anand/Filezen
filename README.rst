@@ -9,7 +9,7 @@ Filezen
 
 .. raw:: html
 
-    <a href="https://www.buymeacoffee.com/abhiinav" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 157px !important;" ></a>
+    <a href="https://www.buymeacoffee.com/abhiinav" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 107px !important;" ></a>
 
 *An Intelligent file organizer module which reads your file storing pattern & move
 the cluttered files accordingly!*
