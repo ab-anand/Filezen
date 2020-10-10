@@ -112,7 +112,7 @@ Advanced Scanner
 - By default, ``depth = 5``
 - Using ``Advanced Scanner``
 
-.. figure:: https://i.imgur.com/6e3gKWq.png
+.. figure:: https://i.imgur.com/R0VHzbW.png
    :alt:
 
 - If no **Output Directory** is specified, then ``Advanced Scanner`` would read the folders in the **Input Directory** itself and move accordingly.
