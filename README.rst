@@ -93,7 +93,7 @@ Simple Scanner
 - Based on this mapping it creates directories(only if they don't exist already) and organizes files into them as shown in the above Fig.
 - Using ``Simple Scanner``
 
-.. figure:: https://i.imgur.com/SwL9O2q.png
+.. figure:: https://i.imgur.com/M31rSqU.png
     :alt:
 
 - If no **Output Directory** is specified, then ``Simple Scanner`` would treat **Input Directory** as the **Output Directory**  thus creating folders in the **Input Directory** itself.
