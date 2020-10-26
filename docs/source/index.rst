@@ -6,9 +6,10 @@ Filezen
 
 |version| |codecov| |readthedocs.org| |license| |build| |pypi| |deepsource|
 
+Contents:
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
     home
     installation
@@ -16,3 +17,9 @@ Filezen
     advanced-options
     faq
 
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
