@@ -10,4 +10,9 @@ Filezen
 .. toctree::
    :maxdepth: 4
 
-   filezen
+    home
+    installation
+    usage
+    advanced-options
+    faq
+
