@@ -93,8 +93,24 @@ Simple Scanner
 - Based on this mapping it creates directories(only if they don't exist already) and organizes files into them as shown in the above Fig.
 - Using ``Simple Scanner``
 
-.. figure:: https://i.imgur.com/M31rSqU.png
-    :alt:
+.. code:: python
+
+    >>> from filezen import SimpleScanner as scanner
+    >>> input_directory = "/home/abhinav/Downloads"
+    >>> output_directory = "/home/abhinav/Documents"
+    >>> result = scanner.cleanDirectory(input_directory, outputPath=output_directory)
+    >>> print(result)
+    '{
+        "Moved": [
+            "FileA.pdf",
+            "FileB.txt",
+            "FileC.mp4",
+            "FileD.log",
+            "FileB.xyz"
+        ],
+        "NotMoved": [
+        ]
+    }'
 
 - If no **Output Directory** is specified, then ``Simple Scanner`` would treat **Input Directory** as the **Output Directory**  thus creating folders in the **Input Directory** itself.
 
@@ -112,8 +128,25 @@ Advanced Scanner
 - By default, ``depth = 5``
 - Using ``Advanced Scanner``
 
-.. figure:: https://i.imgur.com/kNhinvl.png
-   :alt:
+.. code:: python
+
+    >>> from filezen import AdvancedScanner as scanner
+    >>> input_directory = "/home/abhinav/Downloads"
+    >>> output_directory = "/home/abhinav/Documents"
+    >>> depth = 3
+    >>> result = scanner.cleanDirectory(input_directory, outputPath=output_directory, depth=depth)
+    >>> print(result)
+    '{
+        "Moved": [
+            "FileA.pdf",
+            "FileB.txt",
+            "FileC.mp4",
+            "FileD.log",
+            "FileE.xyz"
+        ],
+        "NotMoved": [
+        ]
+    }'
 
 - If no **Output Directory** is specified, then ``Advanced Scanner`` would read the folders in the **Input Directory** itself and move accordingly.
 
