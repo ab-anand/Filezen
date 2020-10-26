@@ -8,14 +8,14 @@ Filezen
 
 Contents:
 
-.. toctree::
+.. TOCTREE::
    :maxdepth: 2
 
-    home
-    installation
-    usage
-    advanced-options
-    faq
+   home
+   installation
+   usage
+   advanced-options
+   faq
 
 Indices and tables
 ==================
